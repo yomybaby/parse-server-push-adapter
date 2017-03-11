@@ -144,7 +144,7 @@ APNS.prototype.send = function(data, devices) {
     return memo.concat(promises);
   }, allPromises);
 
-  return Promise.all(allPromises);
+  return Parse.Promise.when(allPromises);
 }
 
 function handleTransmissionError(conns, errCode, notification, apnDevice) {
